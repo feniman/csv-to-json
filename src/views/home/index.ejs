@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>CSV to JSON</title>
+		<link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<br><br><br>
+			<h2>CSV to JSON</h2>
+			<div class="row">
+				<div class="col-md-3 jumbotron">
+					<h2>CSV</h2>
+					<a href="/addcsv" class="btn btn-success">Add CSV</a>
+					<br><br>
+					<% if (csvFiles.length > 0) { %>
+						<% for(var i = 0; i < csvFiles.length; i++) {%>
+							<div class="row alert alert-secondary">
+								<span class="col-md-6"><%= csvFiles[i].date %></span>
+								<span class="col-md-6"><%= csvFiles[i].filename %></span>
+								<div class="btn-group" role="group" aria-label="CSV File">
+									<a href="/convertcsv/<%= csvFiles[i].file %>" class="btn btn-success">Convert to Json</a>
+									<a href="/deletecsv/<%= csvFiles[i].file %>" class="btn btn-danger">Delete</a>
+								</div>
+							</div>
+						<% } %>
+					<% } else { %>
+						<h4>Empty</h4>
+					<% } %>
+				</div>
+				<div class="col-md-3 offset-md-1 jumbotron">
+					<h2>JSON</h2>
+					<a href="/addjson" class="btn btn-success">Add JSON</a>
+					<br><br>
+					<% if (jsonFiles.length > 0) { %>
+						<% for(var i = 0; i < jsonFiles.length; i++) {%>
+							<div class="row alert alert-secondary">
+								<span class="col-md-6"><%= jsonFiles[i].date %></span>
+								<span class="col-md-6"><%= jsonFiles[i].filename %></span>
+								<div class="btn-group" role="group" aria-label="JSON File">
+									<a href="/convertjson/<%= jsonFiles[i].file %>" class="btn btn-success">Convert to CSV</a>
+									<a href="/deletejson/<%= jsonFiles[i].file %>" class="btn btn-danger">Delete</a>
+								</div>
+							</div>
+						<% } %>
+					<% } else { %>
+						<h4>Empty</h4>
+					<% } %>
+				</div>
+				<div class="col-md-3 offset-md-1 jumbotron">
+					<h2>Processed</h2>
+					<br><br>
+					<% if (processedFiles.length > 0) { %>
+						<% for(var i = 0; i < processedFiles.length; i++) {%>
+							<div class="row alert alert-secondary">
+								<span class="col-md-6"><%= processedFiles[i].date %></span>
+								<span class="col-md-6"><%= processedFiles[i].filename %></span>
+								<div class="btn-group" role="group" aria-label="Processed File">
+									<a href="/downloadcsv/<%= processedFiles[i].file %>" class="btn btn-success">Download CSV</a>
+									<a href="/downloadjson/<%= processedFiles[i].file %>" class="btn btn-success">Download JSON</a>
+								</div>
+							</div>
+						<% } %>
+					<% } else { %>
+						<h4>Empty</h4>
+					<% } %>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

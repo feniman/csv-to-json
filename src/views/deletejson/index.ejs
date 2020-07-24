@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>CSV to JSON - Delete JSON</title>
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <br/><br/><br/>
+      <h2>CSV to JSON > <small>Delete JSON</small></h2>
+      <div class="row">
+        <div class="col-md-5 jumbotron">
+          <form action="/deletejson" method="post" id="deletejson">
+            <div class="form-group">
+              <label for="fileToUpload">Do you want to delete the <b><i><%= file %></i></b> file?</label>
+              <input type="hidden" name="file" value="<%= file %>">
+              <br>
+              <div class="btn-group float-right" role="group" aria-label="delete File">
+                <input type="submit" class="btn btn-success" value="Yes" name="submit">
+                <a href="/" class="btn btn-danger">Not</a>
+              </div>
+            </div>
+          </form>
+        </div>
+    </div>
+  </body>
+</html>

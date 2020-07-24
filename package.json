@@ -1,0 +1,21 @@
+{
+  "name": "csv-to-json",
+  "version": "0.1.0",
+  "description": "Convert files CSV in JSON",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Leonardo Feniman",
+  "license": "ISC",
+  "dependencies": {
+    "consign": "^0.1.6",
+    "csv-parser": "^2.3.3",
+    "csv-writer": "^1.6.0",
+    "dateformat": "^3.0.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "formidable": "^1.2.2",
+    "fs": "0.0.1-security"
+  }
+}

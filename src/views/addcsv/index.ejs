@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>CSV to JSON - Add CSV</title>
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <br/><br/><br/>
+      <h2>CSV to JSON > <small>Add CSV</small></h2>
+      <a href="/" class="btn btn-success">Back</a>
+      <br/>
+      <br/>
+      <div class="row">
+        <div class="col-md-5 jumbotron">
+          <form action="/addcsv" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="fileToUpload">Select file CSV to upload:</label>
+              <input type="file" name="fileToUpload" accept=".csv" id="fileToUpload">
+              <input type="submit" class="btn btn-success float-right" value="Upload CSV" name="submit">
+            </div>
+          </form>
+        </div>
+    </div>
+  </body>
+</html>
